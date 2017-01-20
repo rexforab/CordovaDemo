@@ -9,9 +9,19 @@
 
     function onDeviceReady() {
         $('#get-weather-btn').click(getWeatherWithZipCode);
-        //getWeatherWithGeoLocation();
+        $('#btnAutoLocate').click(getWeatherWithGeoLocation);
 
+        //location
         $('#btnGetLocation').click(getLocation);
+
+        //camera
+        $("#btnSavePhoto").click(savePhoto);
+        $("#btnGetPhoto").click(getPhoto);
+
+        //data
+        $("#btnSaveData").click(saveData);
+        $("#btnLoadData").click(loadData);
+        
     };
 
     function onPause() {

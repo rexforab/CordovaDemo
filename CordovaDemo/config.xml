@@ -109,4 +109,7 @@
     <splash src="res/screens/wp8/SplashScreenImage.png" width="768" height="1280" />
   </platform>
   <plugin name="cordova-plugin-geolocation" version="2.4.1" />
+  <plugin name="cordova-plugin-camera" version="2.3.1" />
+  <plugin name="cordova-plugin-file" version="4.3.1" />
+  <plugin name="cordova-plugin-compat" version="1.1.0" />
 </widget>

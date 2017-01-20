@@ -10,7 +10,10 @@
         <link rel="stylesheet" type="text/css" href="./css/index.css">
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap:
             http://api.openweathermap.org https://ssl.gstatic.com 'unsafe-eval'; style-src 'self'
-            'unsafe-inline'; media-src *">       
+            'unsafe-inline'; 
+              script-src 'self' http://xxxx; 
+              img-src * data: blob:; 
+              media-src *">       
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -26,28 +29,63 @@
             </div>
 
             <div role="main" class="ui-content">
-                <form>
-                    <!--<label for="zip-code">Type your zip code:</label>
-                    <input id="zip-code-input" name="zip-code" placeholder="eg. 98001" />
-                    <button id="get-weather-btn" data-role="button" data-icon="search">Find Weather</button>-->
-                    <button id="btnGetLocation" data-role="button" data-icon="search">Get Location</button>
-                    <label id="lblCurrentLocation"></label>
-                </form>
 
-                <ul id="weather-data" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
-                    <li data-role="list-divider" id="title" class="ui-li-divider ui-bar-a"></li>
-                    <li><span id="summary"><span id="temperature"></span> F <img src="" /></span></li>
-                    <li>Wind: <span id="wind"></span> knots</li>
-                    <li>Humidity: <span id="humidity"></span> %</li>
-                    <li>Visibility: <span id="visibility"></span></li>
-                    <li>Sunrise: <span id="sunrise"></span></li>
-                    <li>Sunset: <span id="sunset"></span></li>
-                </ul>
+                <button id="btnGetLocation" data-role="button" data-icon="search">Get Location</button>
+                <label id="lblCurrentLocation"></label>
 
-                <div id="error-msg" class="not-displayed">
-                </div>
+                <input type="button" id="btnSavePhoto" value="Save Photo" />
+                <img src="" id="imageFile" height="100px" width="100px" />
+                <input type="button" id="btnGetPhoto" value="Get Photo" />
+                <img src="" id="gotImage" height="100px" width="100px" />
 
-            </div>
+                <button id="btnSaveData">Save Data</button>
+                <button id="btnLoadData">Load Data</button>
+                <label id="lblData"></label>
+
+                <hr />
+                <!--<form>
+            
+
+            <fieldset class="ui-grid-a">
+                <div class="ui-block-a"><button id="get-weather-btn" data-role="button" data-icon="search">Find Weather</button></div>
+                <div class="ui-block-b"><button id="btnAutoLocate" data-role="button" data-icon="search">Auto Locate</button></div>
+            </fieldset>
+        </form>
+
+        <fieldset class="ui-grid-a">
+            <div class="ui-block-a"><button type="submit" data-theme="c">Cancel</button></div>
+            <div class="ui-block-b"><button type="submit" data-theme="b">Submit</button></div>
+        </fieldset>-->
+                <input id="zip-code-input" name="zip-code" placeholder="eg. 98001" />
+                <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><button id="get-weather-btn">Find Weather</button></div>
+                    <div class="ui-block-b"><button id="btnAutoLocate">Auto Locate</button></div>
+                </fieldset>
+                    <!--<input type="button" id="btnTakePhoto" value="Take Photo Image Base64" />
+        <img src="" id="myImage" height="200px" width="200px" />
+        <label id="text1"></label>-->
+                    <!--<button id="btnCapturePhoto">Capture Photo</button> <br>-->
+                    <!--<button id="btnCapturePhotoEdit">Capture Editable Photo</button> <br>
+        <button id="btnGetPhoto">From Photo Library</button><br>
+        <button id="btnGetPhotoFromAlbulm">From Photo Album</button><br>
+
+        <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+        <img style="display:none;" id="largeImage" src="" />-->
+
+                    <ul id="weather-data" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
+                        <li data-role="list-divider" id="title" class="ui-li-divider ui-bar-a"></li>
+                        <li><span id="summary"><span id="temperature"></span> F <img src="" /></span></li>
+                        <li>Wind: <span id="wind"></span> knots</li>
+                        <li>Humidity: <span id="humidity"></span> %</li>
+                        <li>Visibility: <span id="visibility"></span></li>
+                        <li>Sunrise: <span id="sunrise"></span></li>
+                        <li>Sunset: <span id="sunset"></span></li>
+                    </ul>
+
+                    <div id="error-msg" class="not-displayed">
+                    </div>
+
+</div>
 
             <footer data-role="footer" data-position="fixed">
                 <h4>Visual Studio Tools for Cordova Demo</h4>
